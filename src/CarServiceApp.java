@@ -11,12 +11,16 @@ public class CarServiceApp {
         Employee employee;
 
         do {
+            System.out.println();
             System.out.println("----- Car Service App -----");
+            System.out.println();
             System.out.println("1. Add employee");
             System.out.println("2. Display all employees");
             System.out.println("3. Assign task");
+            System.out.println("4. Display schedule");
             System.out.println("100. Quit");
-
+            System.out.println();
+            System.out.print("What you want to do?:");
             option = scanner.nextInt();
             scanner.nextLine();
 
@@ -50,8 +54,9 @@ public class CarServiceApp {
                     } else {
                         System.out.println("Not found.");
                     }
-
-
+                    break;
+                case 4:
+                    carService.displayTasks();
                     break;
             }
         }while (option != 100);

@@ -7,11 +7,12 @@ public class CarService {
 
     public CarService() {
         employees = new Employee[10];
+        tasks = new Task[10];
     }
 
-    public void addEmployee(Employee employee){
+    public void addEmployee(Employee employee) {
         employees[index++] = employee;
-        }
+    }
 
     public void displayEmployees() {
         for (int i = 0; i < employees.length && employees[i] != null; i++) {
@@ -19,9 +20,9 @@ public class CarService {
         }
     }
 
-    public Employee findEmployee(int identifier){
+    public Employee findEmployee(int identifier) {
         for (int i = 0; i < employees.length && employees[i] != null; i++) {
-            if(employees[i].getIdentifier() == identifier){
+            if (employees[i].getIdentifier() == identifier) {
                 return employees[i];
             }
         }
@@ -30,5 +31,11 @@ public class CarService {
 
     public void addTask(Task task) {
         tasks[taskIndex++] = task;
+    }
+
+    public void displayTasks() {
+        for (int i = 0; i < tasks.length && tasks[i] != null; i++) {
+            tasks[i].display();
+        }
     }
 }
