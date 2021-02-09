@@ -7,6 +7,8 @@ public class CarServiceApp {
         Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);
         CarService carService = new CarService();
         int option;
+        int identifier = 1;
+        Employee employee;
 
         do {
             System.out.println("----- Car Service App -----");
@@ -25,12 +27,30 @@ public class CarServiceApp {
                     System.out.print("Age:");
                     int age = scanner.nextInt();
 
-                    Employee employee = new Employee(name, age);
+                    employee = new Employee(name, age, identifier);
                     carService.addEmployee(employee);
+                    identifier++;
 
                     break;
                 case 2:
                     carService.displayEmployees();
+
+                    break;
+                case 3:
+                    System.out.print("Description: ");
+                    String description = scanner.nextLine();
+                    System.out.println("Assigned: ");
+                    identifier = scanner.nextInt();
+                    scanner.nextLine();
+
+                    employee = carService.findEmployee(identifier);
+                    if(employee != null) {
+                        Task task = new Task(description, employee);
+                        carService.addTask(task);
+                    } else {
+                        System.out.println("Not found.");
+                    }
+
 
                     break;
             }
