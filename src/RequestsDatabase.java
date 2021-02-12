@@ -16,4 +16,12 @@ public class RequestsDatabase {
             requests[i].display();
         }
     }
+
+    public void displayRequest(int searchNumber) {
+        for (int j = 0; j < requests.length && requests[j] != null; j++) {
+            if (requests[j].getRequestNumber() == searchNumber){
+                requests[j].display();
+            }
+        }
+    }
 }

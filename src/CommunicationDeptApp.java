@@ -40,7 +40,11 @@ public class CommunicationDeptApp {
 
                     break;
                 case 2:
-                    System.out.println(2);
+                    System.out.println("Request number: ");
+                    int searchNumber = scanner.nextInt();
+                    scanner.nextLine();
+                    requestsDatabase.displayRequest(searchNumber);
+
 
                     break;
                 case 3:

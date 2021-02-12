@@ -18,8 +18,12 @@ public class Request {
         return requestNumber;
     }
 
-    public void setRequestNumber(int requestNumber) {
-        this.requestNumber = requestNumber;
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public void display(){
