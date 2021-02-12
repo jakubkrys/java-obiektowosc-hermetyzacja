@@ -31,4 +31,19 @@ public class RequestsDatabase {
             }
         }
     }
+
+    public void checkStatus(int finalStatusNumber) {
+        for (int j = 0; j < requests.length && requests[j] != null; j++) {
+            if (requests[j].getRequestNumber() == finalStatusNumber) {
+                switch (requests[j].getStatus()) {
+                    case "W realizacji":
+                        System.out.println("NO");
+                        break;
+                    case "Do odbioru":
+                        System.out.println("YES");
+                        break;
+                }
+            }
+        }
+    }
 }

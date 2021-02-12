@@ -45,13 +45,23 @@ public class CommunicationDeptApp {
                     int choose = scanner.nextInt();
                     scanner.nextLine();
                     requestsDatabase.changeStatus(searchNumber, choose);
-                    
+
                     break;
                 case 3:
+                    System.out.print("Request number: ");
+                    int finalStatusNumber = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.print("Is request finished?:");
+                    requestsDatabase.checkStatus(finalStatusNumber);
+
+
+                    break;
+                case 8:
                     requestsDatabase.displayALL(); // kontrolne wyświetlanie wszystkich rekordów
 
                     break;
                 case 0:
+
                     break;
             }
         } while (option != 0);
