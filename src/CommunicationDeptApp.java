@@ -36,19 +36,19 @@ public class CommunicationDeptApp {
                     requestsDatabase.add(request);
                     requestNumber++;
 
-                    requestsDatabase.displayALL(); // kontrolne wyświetlanie wszystkich rekordów
-
                     break;
                 case 2:
-                    System.out.println("Request number: ");
+                    System.out.print("Request number: ");
                     int searchNumber = scanner.nextInt();
                     scanner.nextLine();
-                    requestsDatabase.displayRequest(searchNumber);
-
-
+                    System.out.println("Which status you want to set (1 - W realizacji; 2 - Do odbioru:");
+                    int choose = scanner.nextInt();
+                    scanner.nextLine();
+                    requestsDatabase.changeStatus(searchNumber, choose);
+                    
                     break;
                 case 3:
-                    System.out.println(3);
+                    requestsDatabase.displayALL(); // kontrolne wyświetlanie wszystkich rekordów
 
                     break;
                 case 0:
