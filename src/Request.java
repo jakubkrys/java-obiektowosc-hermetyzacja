@@ -10,7 +10,7 @@ public class Request {
         this.name = name;
         this.surname = surname;
         this.type = type;
-        this.status = "Złożono";
+        this.status = "Submitted";
         this.requestNumber = requestNumber;
     }
 

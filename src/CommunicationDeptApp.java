@@ -14,22 +14,23 @@ public class CommunicationDeptApp {
             System.out.println("------------------------------------");
             System.out.println("Communication Dept. - Plates Section");
             System.out.println("------------------------------------");
-            System.out.println("1. New plate - request");
+            System.out.println("1. New plates request");
             System.out.println("2. Change request status");
             System.out.println("3. Check request status");
+            //System.out.println("8. Display all requests (control)");
             System.out.println("0. Quit");
             System.out.println();
-            System.out.print("What you want to do?:");
+            System.out.print("What you want to do?: ");
             option = scanner.nextInt();
             scanner.nextLine();
 
             switch (option) {
                 case 1:
-                    System.out.print("Name:");
+                    System.out.print("Name: ");
                     String name = scanner.nextLine();
-                    System.out.print("Surname:");
+                    System.out.print("Surname: ");
                     String surname = scanner.nextLine();
-                    System.out.print("Plate type (Car, Motorcycle, Vintage):");
+                    System.out.print("Plate type (Car, Motorcycle, Vintage): ");
                     String type = scanner.nextLine();
 
                     Request request = new Request(name, surname, type, "", requestNumber);
@@ -41,7 +42,7 @@ public class CommunicationDeptApp {
                     System.out.print("Request number: ");
                     int searchNumber = scanner.nextInt();
                     scanner.nextLine();
-                    System.out.println("Which status you want to set (1 - W realizacji; 2 - Do odbioru:");
+                    System.out.println("Which status you want to set (1 - In progress; 2 - Done:");
                     int choose = scanner.nextInt();
                     scanner.nextLine();
                     requestsDatabase.changeStatus(searchNumber, choose);
@@ -51,7 +52,7 @@ public class CommunicationDeptApp {
                     System.out.print("Request number: ");
                     int finalStatusNumber = scanner.nextInt();
                     scanner.nextLine();
-                    System.out.print("Is request finished?:");
+                    System.out.print("Is request finished?: ");
                     requestsDatabase.checkStatus(finalStatusNumber);
 
 
