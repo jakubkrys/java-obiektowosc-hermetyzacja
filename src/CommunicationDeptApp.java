@@ -6,7 +6,9 @@ public class CommunicationDeptApp {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);
+        RequestsDatabase requestsDatabase = new RequestsDatabase(50);
         int option;
+        int requestNumber = 1;
 
         do {
             System.out.println("------------------------------------");
@@ -23,7 +25,18 @@ public class CommunicationDeptApp {
 
             switch (option) {
                 case 1:
-                    System.out.println(1);
+                    System.out.print("Name:");
+                    String name = scanner.nextLine();
+                    System.out.print("Surname:");
+                    String surname = scanner.nextLine();
+                    System.out.print("Plate type (Car, Motorcycle, Vintage):");
+                    String type = scanner.nextLine();
+
+                    Request request = new Request(name, surname, type, "", requestNumber);
+                    requestsDatabase.add(request);
+                    requestNumber++;
+
+                    requestsDatabase.displayALL(); // kontrolne wyświetlanie wszystkich rekordów
 
                     break;
                 case 2:
